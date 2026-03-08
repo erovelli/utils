@@ -14,6 +14,7 @@ default = ["console_error_panic_hook"]
 wasm-bindgen = "0.2.84"
 console_error_panic_hook = { version = "0.1.7", optional = true }
 js-sys = "0.3"
+base64 = "0.22"
 
 [dependencies.web-sys]
 version = "0.3"
@@ -23,6 +24,7 @@ features = [
     "Event",
     "EventTarget",
     "HtmlInputElement",
+    "HtmlTextAreaElement",
     "Location",
     "Node",
     "Window",

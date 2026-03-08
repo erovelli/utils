@@ -201,3 +201,90 @@ input[type="checkbox"] {
 .btn:hover {
     background: var(--accent-hover);
 }
+
+/* Textarea */
+textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    color: var(--text);
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+textarea:focus {
+    border-color: var(--accent);
+}
+
+/* JWT input overlay (color-coded token) */
+.jwt-input-wrap {
+    position: relative;
+}
+
+.jwt-input-wrap textarea {
+    position: relative;
+    width: 100%;
+    color: transparent;
+    caret-color: var(--text);
+    background: transparent;
+    z-index: 1;
+    resize: vertical;
+}
+
+.jwt-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.jwt-part-header    { color: #fb7185; }
+.jwt-part-payload   { color: #a78bfa; }
+.jwt-part-signature { color: #22d3ee; }
+.jwt-part-dot       { color: var(--text-muted); }
+
+/* JWT decoder */
+.jwt-output {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    min-height: 2.4rem;
+}
+
+.jwt-output pre {
+    margin: 0;
+    padding: 0.75rem;
+    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text);
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 107, 107, 0.08);
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    border-radius: 6px;
+}

@@ -1,3 +1,4 @@
+mod jwt_decoder;
 mod password_gen;
 mod utils;
 
@@ -33,11 +34,18 @@ struct UtilEntry {
     description: &'static str,
 }
 
-const UTILS: &[UtilEntry] = &[UtilEntry {
-    id: "password-gen",
-    name: "Password Generator",
-    description: "Generate deterministic passwords from a seed phrase",
-}];
+const UTILS: &[UtilEntry] = &[
+    UtilEntry {
+        id: "password-gen",
+        name: "Password Generator",
+        description: "Generate deterministic passwords from a seed phrase",
+    },
+    UtilEntry {
+        id: "jwt-decoder",
+        name: "JWT Decoder",
+        description: "Decode and inspect JSON Web Token headers and payloads",
+    },
+];
 
 fn render_home(root: &Element) {
     let mut html = String::from(
@@ -69,6 +77,7 @@ fn route() {
 
     match hash.as_str() {
         "password-gen" => password_gen::render(&root),
+        "jwt-decoder" => jwt_decoder::render(&root),
         _ => render_home(&root),
     }
 }
