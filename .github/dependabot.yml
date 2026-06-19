@@ -4,7 +4,16 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
+    # Supply-chain safety: only propose releases that have been public for at
+    # least 7 days. Newly published versions sit in cooldown so a compromised
+    # release has time to be caught and yanked before we pull it in.
+    # Note: cooldown applies to version updates only — Dependabot security
+    # updates still land immediately.
+    cooldown:
+      default-days: 7
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 7
